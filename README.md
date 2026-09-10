@@ -1,4 +1,4 @@
-# Face Detection using Haar Cascades with OpenCV and Matplotlib
+# Exp 12 - Face Detection using Haar Cascades with OpenCV and Matplotlib
 
 ## Name : Deepak K R
 ## Regno : 212225040057
