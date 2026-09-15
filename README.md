@@ -101,7 +101,130 @@ else:
 
 
 ```
+```py
+import cv2
 
+# Load Haar cascade directly from local file
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+# Read the image
+image = cv2.imread('image_02.png')
+
+# Check if image was loaded
+if image is None:
+    print("Error: Image not found.")
+else:
+    # Convert to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # Detect faces
+    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+
+    # Draw rectangles
+    for (x, y, w, h) in faces:
+        cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
+
+    # Get screen resolution
+    screen_res = 1920, 1080  # You can change this based on your screen
+    scale_width = screen_res[0] / image.shape[1]
+    scale_height = screen_res[1] / image.shape[0]
+    scale = min(scale_width, scale_height)
+
+    window_width = int(image.shape[1] * scale)
+    window_height = int(image.shape[0] * scale)
+
+    # Resize image
+    resized_image = cv2.resize(image, (window_width, window_height))
+
+    # Show image
+    cv2.imshow('Detected Faces', resized_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+```
+```py
+
+import cv2
+
+# Load Haar cascade directly from local file
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+# Read the image
+image = cv2.imread('image_03.png')
+
+# Check if image was loaded
+if image is None:
+    print("Error: Image not found.")
+else:
+    # Convert to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # Detect faces
+    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+
+    # Draw rectangles
+    for (x, y, w, h) in faces:
+        cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
+
+    # Get screen resolution
+    screen_res = 1920, 1080  # You can change this based on your screen
+    scale_width = screen_res[0] / image.shape[1]
+    scale_height = screen_res[1] / image.shape[0]
+    scale = min(scale_width, scale_height)
+
+    window_width = int(image.shape[1] * scale)
+    window_height = int(image.shape[0] * scale)
+
+    # Resize image
+    resized_image = cv2.resize(image, (window_width, window_height))
+
+    # Show image
+    cv2.imshow('Detected Faces', resized_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+```
+```py
+import cv2
+
+# Load Haar cascade directly from local file
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+# Read the image
+image = cv2.imread('25008695.jpg')
+
+# Check if image was loaded
+if image is None:
+    print("Error: Image not found.")
+else:
+    # Convert to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # Detect faces
+    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+
+    # Draw rectangles
+    for (x, y, w, h) in faces:
+        cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
+
+    # Get screen resolution
+    screen_res = 1920, 1080  # You can change this based on your screen
+    scale_width = screen_res[0] / image.shape[1]
+    scale_height = screen_res[1] / image.shape[0]
+    scale = min(scale_width, scale_height)
+
+    window_width = int(image.shape[1] * scale)
+    window_height = int(image.shape[0] * scale)
+
+    # Resize image
+    resized_image = cv2.resize(image, (window_width, window_height))
+
+    # Show image
+    cv2.imshow('Detected Faces', resized_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+```
 ## OUTPUT:
 
 
