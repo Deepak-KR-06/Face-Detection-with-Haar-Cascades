@@ -1,7 +1,7 @@
 # Exp 12 - Face Detection using Haar Cascades with OpenCV and Matplotlib
 
 ## Name : Deepak K R
-## Regno : 212225040057
+## Reg no : 212225040057
 ## Date : 03/09/2026
 
 ## Aim
@@ -60,13 +60,14 @@ iv) Perform face detection with label in real-time video from webcam.
 
 ## PROGRAM :
 ```py
+
 import cv2
 
-# Load Haar cascade directly from local file
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+# Load Haar cascade
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Read the image
-image = cv2.imread('image_01.png')
+image = cv2.imread('sabii.jpg')
 
 # Check if image was loaded
 if image is None:
@@ -98,143 +99,24 @@ else:
     cv2.imshow('Detected Faces', resized_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-
-
-```
-```py
-import cv2
-
-# Load Haar cascade directly from local file
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
-# Read the image
-image = cv2.imread('image_02.png')
-
-# Check if image was loaded
-if image is None:
-    print("Error: Image not found.")
-else:
-    # Convert to grayscale
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    # Detect faces
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
-
-    # Draw rectangles
-    for (x, y, w, h) in faces:
-        cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
-
-    # Get screen resolution
-    screen_res = 1920, 1080  # You can change this based on your screen
-    scale_width = screen_res[0] / image.shape[1]
-    scale_height = screen_res[1] / image.shape[0]
-    scale = min(scale_width, scale_height)
-
-    window_width = int(image.shape[1] * scale)
-    window_height = int(image.shape[0] * scale)
-
-    # Resize image
-    resized_image = cv2.resize(image, (window_width, window_height))
-
-    # Show image
-    cv2.imshow('Detected Faces', resized_image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
-```
-```py
-
-import cv2
-
-# Load Haar cascade directly from local file
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
-# Read the image
-image = cv2.imread('image_03.png')
-
-# Check if image was loaded
-if image is None:
-    print("Error: Image not found.")
-else:
-    # Convert to grayscale
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    # Detect faces
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
-
-    # Draw rectangles
-    for (x, y, w, h) in faces:
-        cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
-
-    # Get screen resolution
-    screen_res = 1920, 1080  # You can change this based on your screen
-    scale_width = screen_res[0] / image.shape[1]
-    scale_height = screen_res[1] / image.shape[0]
-    scale = min(scale_width, scale_height)
-
-    window_width = int(image.shape[1] * scale)
-    window_height = int(image.shape[0] * scale)
-
-    # Resize image
-    resized_image = cv2.resize(image, (window_width, window_height))
-
-    # Show image
-    cv2.imshow('Detected Faces', resized_image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
-```
-```py
-import cv2
-
-# Load Haar cascade directly from local file
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
-# Read the image
-image = cv2.imread('25008695.jpg')
-
-# Check if image was loaded
-if image is None:
-    print("Error: Image not found.")
-else:
-    # Convert to grayscale
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    # Detect faces
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
-
-    # Draw rectangles
-    for (x, y, w, h) in faces:
-        cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
-
-    # Get screen resolution
-    screen_res = 1920, 1080  # You can change this based on your screen
-    scale_width = screen_res[0] / image.shape[1]
-    scale_height = screen_res[1] / image.shape[0]
-    scale = min(scale_width, scale_height)
-
-    window_width = int(image.shape[1] * scale)
-    window_height = int(image.shape[0] * scale)
-
-    # Resize image
-    resized_image = cv2.resize(image, (window_width, window_height))
-
-    # Show image
-    cv2.imshow('Detected Faces', resized_image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
 ```
 ## OUTPUT:
 
+<img width="442" height="483" alt="image" src="https://github.com/user-attachments/assets/1189bd4c-e08e-4076-9e8a-6328a82d85bd" />
 
-<img width="1025" height="1012" alt="Screenshot 2026-09-07 123456" src="https://github.com/user-attachments/assets/150af607-8cf0-4431-9233-77182afdfd3b" />
+<img width="352" height="456" alt="image" src="https://github.com/user-attachments/assets/ec569245-7b7b-46a6-ad24-951340741f04" />
 
-<img width="1323" height="1007" alt="Screenshot 2026-09-07 123830" src="https://github.com/user-attachments/assets/d33b10c1-c751-4986-9ef6-fb6d30950da5" />
+<img width="618" height="326" alt="image" src="https://github.com/user-attachments/assets/c3b3c86c-0ef1-4b5b-b35a-b5eccc4f7902" />
 
-<img width="1526" height="827" alt="Screenshot 2026-09-07 124016" src="https://github.com/user-attachments/assets/651f917e-3860-4501-b4ee-7031a6485f54" />
+<img width="652" height="337" alt="image" src="https://github.com/user-attachments/assets/d4c79a04-ac73-4d78-8b66-cdbfc1f9e800" />
 
-<img width="1008" height="1010" alt="Screenshot 2026-09-07 124308" src="https://github.com/user-attachments/assets/14f69e7b-7ed4-4bef-a432-e61942373a67" />
+<img width="632" height="327" alt="image" src="https://github.com/user-attachments/assets/18edf150-9942-4ed4-b461-3f20338b899e" />
+
+<img width="452" height="475" alt="image" src="https://github.com/user-attachments/assets/c5e4b2bc-9ef9-4d95-bcea-6291e2e46b4c" />
+
+
+
+
 
 
 ## RESULT:
